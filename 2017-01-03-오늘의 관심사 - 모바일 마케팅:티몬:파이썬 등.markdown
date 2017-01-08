@@ -2,7 +2,7 @@
 title: "오늘의 관심사 - 모바일 마케팅/티몬/파이썬 등"
 layout: post
 date: 2017-01-03 17:05
-image: /assets/images/post/001/01title.jpg
+image: /assets/images/post/001/04_00title.png
 headerImage: true
 tag:
 - 오늘의 관심사
@@ -28,6 +28,7 @@ description: 오늘의 관심사
 #### ['고객 접점과 경험 완벽하게 통합' ... 마케터 6%에 불과'](http://www.ciokorea.com/news/32582)
 
 실제와 디지털 세계와의 접목(`옴니채널`)에 있어 고객 여정에 대한 이해가 부족하다는 기사다. `고객 경험 이해`, `개인화`, `데이터 활용`에 대한 중요성을 강조하면서 디지털 전략이 너무 캠페인 중심에 치우쳤음을 지적했다.
+
 
 #### [중소 전자상거래 업계 새해 결심... "모바일 전환율 높이고 새 채널 발굴"](http://www.ciokorea.com/news/32581)
 

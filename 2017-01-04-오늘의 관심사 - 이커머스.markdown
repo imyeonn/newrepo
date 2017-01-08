@@ -2,7 +2,7 @@
 title: "오늘의 관심사 - 이커머스"
 layout: post
 date: 2017-01-04 08:10
-image: /assets/images/post/001/01title.jpg
+image: /assets/images/post/001/04_00title.png
 headerImage: true
 tag:
 - 오늘의 관심사
@@ -25,4 +25,50 @@ description: 오늘의 관심사
 
 #### [정말 이커머스로 성공할 수 있을까?](https://brunch.co.kr/@sonujung/23)
 
-원문은 Andy Dunn의 'e-commerce is a bear'입니다. Sonu Jung님의 번역글 '정말 이커머스로 성공할 수 있을까?'를 읽고 느낀 점을 정리했습니다.
+{% highlight %}
+원문은 [Andy Dunn의 'e-commerce is a bear'](https://medium.com/@dunn/e-commerce-is-a-bear-d233f02d52a5#.2ra867suz)입니다. Sonu Jung님의 번역글 '정말 이커머스로 성공할 수 있을까?'를 읽고 제게 와닿는 점 위주로 정리했습니다.
+{% endhighlight %}
+
+
+> So if Amazon is the low cost winner of selling brands online, if they are acquiring their best competitors, and if their everyday low prices are available to the entire country via a mechanical turk algorithm which is guaranteed to beat you, how do you compete?
+
+브랜드를 온라인 판매할 때 아마존과 어떻게 경쟁할 것인가? 아마존은 낮은 가격이라는 가장 큰 경쟁력을 가지고 있으며 크라우드 소싱 기반 알고리즘, 경쟁기업 인수 등으로 강력한 상대임에 틀림없다. 가격으로는 아마존을 이길 수 없다. 하지만 이커머스에서 가격은 소비의 가장 큰 변수다. 아무리 고객경험이 잘 형성되어 있고 UI가 예뻐도 비싸면 사람들은 물건을 사지 않는다. 구경만 할 뿐이다. 우리나라에도 아마존이 들어오면 전자상거래 회사들은 다 죽게 될까?
+
+<br>
+
+> Said differently, if your business is standalone e-commerce selling third-party brands, good luck. You can’t generate enough operating profit to scale beyond getting noticed, counter-attacked, and at best acquired. You are forced into stay right where you are.
+
+대부분 내가 아는 전자상거래 업체들의 비즈니스 모델은 오픈마켓 형태다. 저자는 이런 비즈니스 모델로는 인수도 받지 못하고 이익도 얻지 못할 것이라고 경고한다.
+
+
+<br>
+
+저자는 아마존에 대응하는 4가지 방법을 제시했다.
+
+##### 1. Proprietary Pricing
+
+* 일시적으로 좋은 가격을 제시하여 소비자들을 끌어들이는 것(예. 사이버 먼데이)
+
+##### 2. Proprietary Selection
+
+* 특정 고객에게 집중하여 써드파티 브랜드의 독특한 상품을 보여주는 것
+
+##### 3. Proprietary Experience
+
+* 특정 고객에게 집중하여 써드파티 브랜드의 독특한 상품을 보여주는 것
+
+##### 4. Proprietary Merchandise
+
+* 다른 곳에서는 구매할 수 없는 그 브랜드 고유의 제품을 온라인으로 판매하는 것
+
+
+
+<br>
+
+> The new models are fundamentally — whether the merchandise is proprietary or not — about merchandising.
+
+merchandising 즉, 상품화(상품기획)이 중요하다고 한다. 브랜드들을 많이 입점시키는 것이 경쟁력이 아니라 상품을 어떻게 고객에게 매력적으로 표현할 수 있는지가 핵심이다. 문제는 그 상품기획과 더불어 고객에게 특별한 경험을 제공함과 동시에 수익까지 내야 한다는 것이다.
+
+아마존급이 아닌 작은 회사가 배송정책, CRM에서 최상의 서비스를 제공하면서 고객 맞춤 상품 큐레이션을 해주며 낮은 가격을 제공함으로써 상품을 판매하여 이익을 이끌어낼 수 있어야 한다는 소리로 들렸다. 사실 맞는 말이다. 다만 나에게는 '파이썬도 잘하고 씨쁠쁠 마스터했고 자바로 예쁘게 인터렉티브 그래프도 만들 수 있으면서 테라 단위의 데이터 분석을 시키면 척척 유의미한 결과를 만들어내고 데이저 정제, 보관도 무리 없는 그런 인재여야 성공할 수 있다'는 것과 같이 느껴진다.
+
+그럼에도 위 4가지 전략은 꼭 지니고 있어야겠다. 4가지 모두 현재 이커머스 기업들이 내세우고 있는 전략들인데 어떤 기업들이 이 전략으로 소비자들의 좋은 호응을 받았는지, 비슷한 프로모션을 했음에도 수익화에 실패한 기업은 없는지 공부할 거리가 생겼다.
