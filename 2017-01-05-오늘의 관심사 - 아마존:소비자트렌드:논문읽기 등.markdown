@@ -1,5 +1,5 @@
 ---
-title: "오늘의 관심사"
+title: "오늘의 관심사 - 아마존/소비자 트렌드/논문읽기 등"
 layout: post
 date: 2017-01-05 20:04
 image: /assets/images/post/001/04_00title.png
@@ -44,7 +44,7 @@ description: 오늘의 관심사
 
 #### [5 consumer tech trends to watch in 2017](http://venturebeat.com/2017/01/03/the-top-5-trends-to-watch-in-consumer-technology/)
 
-2017년의 소비자 기술 트렌드
+* 2017년의 소비자 기술 트렌드
 1. 음성 인식(Voice controls)
 2. 인공 지능(Artificial intelligence)
 3. 미래 네트워크(Defining the future network)

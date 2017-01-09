@@ -25,9 +25,9 @@ description: 오늘의 관심사
 
 #### [정말 이커머스로 성공할 수 있을까?](https://brunch.co.kr/@sonujung/23)
 
-{% highlight %}
+```
 원문은 [Andy Dunn의 'e-commerce is a bear'](https://medium.com/@dunn/e-commerce-is-a-bear-d233f02d52a5#.2ra867suz)입니다. Sonu Jung님의 번역글 '정말 이커머스로 성공할 수 있을까?'를 읽고 제게 와닿는 점 위주로 정리했습니다.
-{% endhighlight %}
+```
 
 
 > So if Amazon is the low cost winner of selling brands online, if they are acquiring their best competitors, and if their everyday low prices are available to the entire country via a mechanical turk algorithm which is guaranteed to beat you, how do you compete?
