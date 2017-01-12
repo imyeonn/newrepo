@@ -1,7 +1,7 @@
 ---
-title: "파이썬 공부(정규식)"
+title: "파이썬 공부(urllib)"
 layout: post
-date: 2017-01-09 14:35
+date: 2017-01-11 10:20
 image: /assets/images/post/001/08_00title.jpg
 headerImage: true
 tag:
@@ -36,9 +36,9 @@ description: 파이썬
 
 ### request 모듈
 
-* urlopen() : 웹페이지 불러오기
-* getheaders() : 웹서버 정보를 리스트로 반환
-* read() : 웹페이지의 HTML코드 출력
+* urlopen( ) : 웹페이지 불러오기
+* getheaders( ) : 웹서버 정보를 리스트로 반환
+* read( ) : 웹페이지의 HTML코드 출력
 
 {% highlight python %}
 
@@ -75,13 +75,13 @@ def input_query()
 
 ### os 모듈
 
-* getcwd() : 작업 중인 디렉토리 표시 [맥 터미널에서 pwd]
-* chdir() : 디렉토리 변경 [터미널의 cd ~]
-* listdir() : 해당 디렉토리 안의 파일, 폴더 보기 [터미널의 ls]
-* mkdir() : 폴더 만들기 [터미널의 mkdir]
-* makedirs() : 하위폴더 포함 폴더 만들기
-* remove(), unlink() : 파일 삭제
-* rmdir(). removedirs() : 폴더 삭제
+* getcwd( ) : 작업 중인 디렉토리 표시 [맥 터미널에서 pwd]
+* chdir( ) : 디렉토리 변경 [터미널의 cd ~]
+* listdir( ) : 해당 디렉토리 안의 파일, 폴더 보기 [터미널의 ls]
+* mkdir( ) : 폴더 만들기 [터미널의 mkdir]
+* makedirs( ) : 하위폴더 포함 폴더 만들기
+* remove( ), unlink( ) : 파일 삭제
+* rmdir( ). removedirs( ) : 폴더 삭제
 
 {% highlight python %}
 
