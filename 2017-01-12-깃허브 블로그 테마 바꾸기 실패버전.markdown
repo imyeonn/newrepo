@@ -31,26 +31,32 @@ Joon 테마를 선택했고 내 원래 계획은 아래와 같다.
 
 아무 문제도 없어 보였는데 결과는 실패.
 당연히 될 줄 알고 과정샷을 하나씩 찍어두지 않았다는게 흠이다.
+
+---
+
 일단 위 과정을 실행했을 때 상황을 얘기하자면,
 
-1. 기존 블로그 리포지토리 이름 변경
+### 1. 기존 블로그 리포지토리 이름 변경
 
 imyeonn.github.io를 imyeonn.github.io2로 변경했다.
 
-2. 새로운 테마 포크해서 블로그 주소로 리포 이름 변경
+### 2. 새로운 테마 포크해서 블로그 주소로 리포 이름 변경
 
 http://mikevormwald.com/joon/ 이 테마의 리포를 포크한 뒤 내 깃허브에서 'imyeonn.github.io'로 이름을 변경했다.
 
-3. 기존에 썼던 포스트와 관련 이미지파일 옮기기
+### 3. 기존에 썼던 포스트와 관련 이미지파일 옮기기
 
 작성해두었던 포스트와 포스트에 들어가는 이미지 파일을 새로운 리포지토리의 해당 디렉토리에 넣었다.
 
-4. git pull 해서 오프라인과 연동
+### 4. git pull 해서 오프라인과 연동
 
 3번까지는 문제가 없었다. 근데 pull을 하니
 fatal: refusing to merge unrelated histories
 라는 오류가 떴고 http://stackoverflow.com/questions/37937984/git-refusing-to-merge-unrelated-histories 여기에서 제시하는대로 git pull origin master --allow-unrelated-histories 을 하니 pull이 되긴 됐는데 블로그 페이지가 제대로 로딩되지 않았다. 그리고 pull을 한 뒤 git status 를 하니 연동되지 않은 파일들이 있다고 해서 불안한 마음으로 git add . , git commit -m "170112 test", git push 를 하니 온라인 리포지토리의 파일 설명이 대부분 "0112 test"로 변해 있었다....나니?
 이미 pull을 해서 온라인에 있던 걸 로컬에 다 옮겼던거 아니었나? 뭐 설명 부분만 바뀐거라면 그러려니 하고 넘어가겠지만 페이지 로딩도 안되고 이건 뭐 어떻게 건들 수가 없었다.
+
+
+---
 
 그래서 원래 블로그로 다시 돌아가려고 아래와 같은 과정을 거쳤다.
 
@@ -60,8 +66,11 @@ fatal: refusing to merge unrelated histories
 
 1, 2, 3은 문제 없이 진행됐는데 터미널에서 pull을 하고 나서 git status 하니 또 커밋되지 않은 몇개의 파일이 있댄다. 그래서 add, commit, push 를 했더니 지금 이렇게 파일 설명이 또 바뀌었다.(이거라도 캡쳐해서 다행...) 블로그는 제대로 접속되기 때문에 그래도 두기로.
 
-![pic1](/assets/images/post/001/11_01.png)
+![pic1](/assets/images/post/001/12_01.png)
 
 휴
 
 테마를 어떻게 바꿔야 하는 걸까. 좀 더 공부해보고 조만간 다시 도전한다.
+
+
+---
