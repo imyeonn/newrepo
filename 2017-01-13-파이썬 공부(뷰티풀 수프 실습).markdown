@@ -21,7 +21,7 @@ description: 파이썬
 
 ---
 
-## 웹페이지 구조 파악하기
+## 1. 웹페이지 구조 파악하기
 
 ### 프롤로그
 
@@ -29,37 +29,45 @@ description: 파이썬
 
 ### 네이버 블로그 페이지 접속
 
-[패션미용 페이지](http://section.blog.naver.com/sub/PostListByDirectory.nhn?option.page.currentPage=1&option.templateKind=0&option.directorySeq=18&option.viewType=default&option.orderBy=quality&option.latestOnly=1)에 접속하니 아래와 같이 주목받는 블로그 포스팅이 리스트로 나왔다.
+[패션·미용 페이지](http://section.blog.naver.com/sub/PostListByDirectory.nhn?option.page.currentPage=1&option.templateKind=0&option.directorySeq=18&option.viewType=default&option.orderBy=quality&option.latestOnly=1)에 접속하니 아래와 같이 주목받는 블로그 포스팅이 리스트로 나왔다.
+
 ![pic1](/assets/images/post/001/13_01.png)
-
+<p>
 여기서 네모박스로 표시된 포스팅의 제목에 커서를 놓고 마우스 오른쪽 버튼을 클릭한다. 그 다음 `검사`를 클릭한다.
+<p>
 ![pic2](/assets/images/post/001/13_02.png)
-
+<p>
 그러면 이런 코드 가득한 화면이 표시된다. 뚫어져라 코드를 쳐다보자. 화면 상 보이는 부분에 대해서는 `<ul>`안에 `<h5>`가 있고 그 안에 `<a ~>포스팅 제목</a>`가 숨어있다. 내가 이 웹사이트에서 꺼내오고 싶은 건 이 부분이다.
+<p>
 ![pic3](/assets/images/post/001/13_03.png)
-
+<p>
 이 정도까지만 파악하면 됐다. 이제 파이썬 에디터를 켜서 코드를 짤 차례다.
 
 ---
 
-### 파이썬 코드 짜기
+## 2. 파이썬 코드 짜기
 
 준비물: 파이썬 에디터(아톰), 터미널
 
-##### 기본 세팅
+<br>
+### 기본 세팅
 
-Day7에서 배웠던 [urllib]()와 Day8의 [Beautiful Soup]()을 이용할 것이다. 언제나 시작은 내가 사용할 패키지를 불러오는 것으로 한다.
+Day7에서 배웠던 [urllib](https://imyeonn.github.io/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EA%B3%B5%EB%B6%80(urllib)/)와 Day8의 [Beautiful Soup](https://imyeonn.github.io/%ED%8C%8C%EC%9D%B4%EC%8D%AC-%EA%B3%B5%EB%B6%80(%EB%B7%B0%ED%8B%B0%ED%92%80-%EC%88%98%ED%94%84-%EA%B8%B0%EC%B4%88)/)을 이용할 것이다. 언제나 시작은 내가 사용할 패키지를 불러오는 것으로 한다.
 
 {% highlight python %}
 import urllib.request
 from bs4 import BeautifulSoup
 {% endhighlight %}
 
-##### 내가 분석할 페이지 지정
+### 내가 분석할 페이지 지정
 
 분석하고자 하는 페이지 주소를 파이썬에 알려줘야 한다. 주목받는글 파트는 다수의 페이지로 구성되어 있다.
-* 첫 페이지 : http://section.blog.naver.com/sub/PostListByDirectory.nhn?option.page.currentPage=**1**&option.templateKind=0&option.directorySeq=18&option.viewType=default&option.orderBy=quality&option.latestOnly=1
-* 다섯번째 페이지 : http://section.blog.naver.com/sub/PostListByDirectory.nhn?option.page.currentPage=**5**&option.templateKind=0&option.directorySeq=18&option.viewType=default&option.orderBy=quality&option.latestOnly=1
+
+```
+* 첫 페이지 : http://section.blog.naver.com/ ~ .currentPage=**1**&option. ~
+
+* 다섯번째 페이지 : http://section.blog.naver.com/ ~ currentPage=**5**&option. ~
+```
 
 아하. 페이지주소 전체틀은 변하지 않고 중간에 `currentPage=숫자` 부분이 1씩 증가하면서 페이지 수가 바뀐다는 것을 알 수 있다. 따라서 `숫자` 전과 후로 페이지 주소를 나눠 변수를 설정해두는 게 심적으로 편할 것 같다. 또, 난 전체 페이지를 다 끌어올 생각이 없기 때문에 10페이지까지만 수집하도록 정해두기로 한다.
 
@@ -69,7 +77,9 @@ TARGET2 = "&option.templateKind=0&option.directorySeq=18&option.viewType=default
 PAGES = 10
 {% endhighlight %}
 
-##### 크롤링
+<br>
+
+### 크롤링
 
 이제부터가 핵심이다.
 
@@ -98,7 +108,7 @@ for index in range(0, PAGES):
 
 ---
 
-### 터미널에서 실행하기
+## 3. 터미널에서 실행하기
 
 지금까지 짠 코드를 적당한 폴더에 저장한다. 나는 이 곳에다 저장했다.
 ![pic4](/assets/images/post/001/13_04.png)
