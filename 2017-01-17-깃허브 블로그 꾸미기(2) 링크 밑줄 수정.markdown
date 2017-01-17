@@ -29,6 +29,8 @@ description: 깃허브 내맘대로 꾸미기
 ![pic1](/assets/images/post/001/15_01.png)
 <figcaption class="caption">기존 화면</figcaption>
 
+<br>
+
 ![pic2](/assets/images/post/001/15_02.png)
 <figcaption class="caption">PORTFOLIO를 주목!</figcaption>
 
@@ -40,6 +42,8 @@ description: 깃허브 내맘대로 꾸미기
 
 ![pic3](/assets/images/post/001/15_03.png)
 <figcaption class="caption">.html</figcaption>
+
+<br>
 
 {% highlight css %}
 /*.css*/
@@ -59,6 +63,8 @@ description: 깃허브 내맘대로 꾸미기
 
 ![pic6](/assets/images/post/001/15_06.png)
 <figcaption class="caption">그 결과 아무 변화 없음</figcaption>
+
+<br>
 
 그럼 그렇지. 바로 될 리가.
 
@@ -86,10 +92,10 @@ a
 
 {% highlight scss %}
 a
-  color: $delta
+	color: $delta
 	text-decoration: none
 	font-weight: 500
-  border-bottom: 1px dotted $delta // 여기 수정함
+	border-bottom: 1px dotted $delta   // 여기 수정함
 {% endhighlight %}
 
 ![pic9](/assets/images/post/001/15_09.png)
