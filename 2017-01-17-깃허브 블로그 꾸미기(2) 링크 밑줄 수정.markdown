@@ -1,0 +1,93 @@
+---
+title: "깃허브 블로그 꾸미기 (2) 링크 밑줄 수정"
+layout: post
+date: 2017-01-17 17:05
+image: /assets/images/post/001/15_09.png
+headerImage: true
+tag:
+- 깃허브
+- jekyll
+- 링크 밑줄
+blog: true
+star: true
+author: Hyeyeon
+description: 깃허브 내맘대로 꾸미기
+---
+
+### Summary:
+
+기존 템플릿의 링크에 들어가있던 밑줄 스타일을 수정했습니다.
+
+---
+
+
+
+## 기존 화면
+
+지난 포스팅에서 여기까지 만들었다. 겁먹었던 것보다 훨씬 쉽게 속성을 바꿀 수 있길래 하나 더 건드려보기로 했다. 며칠 전 생활코딩의 [겁나 빠른 웹 레시피 - 사진 중심의 웹사이트 만들기](https://opentutorials.org/module/2398/13815)를 수강한 적이 있다. 거기서 예쁘게 밑줄을 긋는 방법을 배웠는데 이걸 써먹어보자.
+
+![pic1](/assets/images/post/001/15_01.png)<figcaption class="caption">기존 화면</figcaption>
+
+![pic2](/assets/images/post/001/15_02.png)<figcaption class="caption">PORTFOLIO를 주목!</figcaption>
+
+## 생활코딩 복습
+
+생활코딩의 **겁나 빠른 웹 레시피** 수업에서는 css를 사용해서 내 블로그에는 적용이 안 될 것 같기도 한데 일단 해보고 막히면 구글신의 도움을 받기로 했다. 웹 레시피 수업에서 배운 바에 의하면 **PORTFOLIO** 가 <h1> 태그의 <a> 안에 들어있기 때문에 .css에서 헤더의 h1, a 안에 원하는 밑줄 속성을 넣으면 된다. 예제에서는 투명도 0.5 정도의 흰색 1픽셀 점선 밑줄을 그었다.
+
+![pic3](/assets/images/post/001/15_03.png)
+![pic4](/assets/images/post/001/15_04.png)
+
+{% highlight css %}
+#header h1 a{
+  color:rgba(255, 250, 250, 0.7);
+  text-decoration: none;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.5);  /*이 부분!!*/
+}
+{% endhighlight %}
+
+이 코드를 그대로 general.sass에 넣었을 때 어떤 변화가 있나 보기로 한다.
+
+![pic5](/assets/images/post/001/15_05.png)
+
+![pic6](/assets/images/post/001/15_06.png)<figcaption class="caption">그 결과 아무 변화 없음</figcaption>
+
+그럼 그렇지.
+
+## 구글신에게
+
+이제 와서 생각하니 당연한 얘기인데 css와 sass가 문법 차이가 있나보다. 구글에 `sass underline style`을 검색했다. 검색어를 바꾸면서 찾아봐도 사실상 css가 아닌 sass 코드는 잘 검색이 되지 않았다. @로 시작하는 되게 긴(10줄 이상의) 샘플코드는 있었는데 아예 이해가 되지 않는 부분이라 복붙하지 않고 하나씩 내 맘대로 바꿔가면서 예쁜 걸 찾아가기로 했다.
+
+{% highlight scss %}
+a
+	color: $delta
+	// text-decoration: underline
+	text-decoration: none
+	font-weight: 500
+{% endhighlight %}
+
+![pic7](/assets/images/post/001/15_07.png)<figcaption class="caption">적용 결과</figcaption>
+
+
+#### 시행착오
+
+처음에는 생활코딩처럼 dotted underline을 그리려고 했으나 sass의 a 부분을 수정하니 링크 외적인 부분도 밑줄이 생겨버렸다.
+
+{% highlight scss %}
+a
+	color: $delta
+	// text-decoration: underline
+	text-decoration: none
+	font-weight: 500
+  border-bottom: 1px dotted $delta
+{% endhighlight %}
+
+![pic8](/assets/images/post/001/15_08.png)<figcaption class="caption">비포</figcaption>
+
+![pic9](/assets/images/post/001/15_09.png)<figcaption class="caption">애프터</figcaption>
+
+
+## 과제
+
+샘플 블로그 페이지를 볼수록 재미있는 게 많았다. 원래는 글자색만 달랐는데 커서를 댈 때 밑줄이 생긴다거나, 밑줄이 그어져 있었는데 커서를 대시 낱말 자체가 하이라이트된다거나 하는 것들. sass든 css든 공부해야겠다. 내년 이맘때쯤에는 나도 커서를 대면 휘양찬란하게 변하는 블로그 만들어야지! 그래도 오늘 대만족 ^_^
+
+---
