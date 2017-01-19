@@ -25,7 +25,8 @@ description: 깃허브 내맘대로 꾸미기
 
 난 [Indigo Minimalist Jekyll Template 테마](https://github.com/sergiokopplin/indigo)를 이용하고 있다. 이 테마는 깔끔하고 다 좋은데, 링크 색이 보라색인 게 맘에 들지 않는다. 이미 들어갔던 링크 같고 칙칙하달까. 오늘 이 보라색을 다른 색으로 바꿔보자.
 
-![pic1](/assets/images/post/001/14_01.png)<figcaption class="caption">기존 블로그</figcaption>
+![pic1](/assets/images/post/001/14_01.png)
+<figcaption class="caption">기존 블로그</figcaption>
 
 ## 색상 속성이 어디에 숨어있나
 
@@ -58,7 +59,8 @@ html에서 링크를 설정할 땐 <a ></a>를 이용한다. 31번째 줄을 보
 
 푸쉬한 다음 [imyeonn.github.io](https://imyeonn.github.io)에 재접속했다. 그 결과,
 
-![pic6](/assets/images/post/001/14_06.png)<figcaption class="caption">변경된 색상</figcaption>
+![pic6](/assets/images/post/001/14_06.png)
+<figcaption class="caption">변경된 색상</figcaption>
 
 **완성!!!!!**
 

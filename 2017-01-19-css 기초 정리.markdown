@@ -1,21 +1,21 @@
 ---
-title: "html 기초 정리"
+title: "css 기초 정리"
 layout: post
-date: 2017-01-18 21:17
-image: /assets/images/post/001/16_00title.png
+date: 2017-01-19 10:02
+image: /assets/images/post/001/17_00title.png
 headerImage: true
 tag:
-- html
-- html 기초
+- css
+- css 기초
 - 생활코딩
 blog: true
 author: Hyeyeon
-description: html 기초 정리
+description: css 기초 정리
 ---
 
 ### Summary:
 
-생활코딩 웹 기본수업 중 html에 대해 기억해야 할 내용입니다.
+생활코딩 웹 기본수업 중 css에 대해 기억해야 할 내용입니다.
 
 ---
 

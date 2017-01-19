@@ -1,0 +1,44 @@
+---
+title: "색조합 참고용 사이트 추천"
+layout: post
+date: 2017-01-21 12:44
+image: /assets/images/post/001/20_01.png
+headerImage: true
+tag:
+- 색조합
+blog: true
+author: Hyeyeon
+description: 색조합 참고용 사이트 추천
+---
+
+### Summary:
+
+피피티, 문서 등을 제작할 때 참고할 만한 색조합 추천 사이트입니다.
+---
+
+
+
+## 컬러헌트
+
+여러 색조합 사이트가 있지만 가장 손이 많이 가는 사이트는 [컬러헌트](http://www.colorhunt.co/)다. 최신 순 또는 인기 많은 순으로 색조합을 큐레이션해주며 내가 좋아하는 조합을 만들 수도 있다. 좋아요, 셰어 버튼을 이용하여 저장 및 공유가 가능하다.
+
+![pic1](/assets/images/post/001/20_01.png)
+<figcaption class="caption">초기 화면</figcaption>
+
+
+<br>
+
+![pic1](/assets/images/post/001/20_02.png)
+<figcaption class="caption">맘에 드는 컬러에 커서를 대면 색상 코드를 알 수 있다. 이것을 복사해서 쓰고 싶은 곳에다 붙여넣기 하면 된다.</figcaption>
+
+<br>
+
+---
+
+## 좋아하는 조합
+
+최근에 내가 빠진 컬러는 이거다. 노란색과 파란색을 좋아하는데 이 블로그도 아래 색상코드를 활용하여 만들었다.
+
+![pic1](/assets/images/post/001/20_03.png)
+
+---
