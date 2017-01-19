@@ -10,7 +10,6 @@ tag:
 - 뷰티풀 수프
 - Beautiful Soup
 blog: true
-star: true
 author: Hyeyeon
 description: 파이썬
 ---

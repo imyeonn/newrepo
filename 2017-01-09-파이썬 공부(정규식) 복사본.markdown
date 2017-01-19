@@ -9,7 +9,6 @@ tag:
 - 크롤링
 - 정규식
 blog: true
-star: true
 author: Hyeyeon
 description: 파이썬
 ---

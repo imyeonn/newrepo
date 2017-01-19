@@ -10,7 +10,6 @@ tag:
 - 파이썬
 - 모바일 마케팅
 blog: true
-star: true
 author: Hyeyeon
 description: 오늘의 관심사
 ---

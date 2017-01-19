@@ -9,7 +9,6 @@ tag:
 - 패션브랜드
 - 뷰티브랜드
 blog: true
-star: true
 author: Hyeyeon
 description: 브랜드 랭킹
 ---

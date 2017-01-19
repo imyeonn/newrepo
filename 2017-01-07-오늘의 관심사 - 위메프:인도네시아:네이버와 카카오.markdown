@@ -10,7 +10,6 @@ tag:
 - 인도네시아
 - 네이버와 카카오
 blog: true
-star: true
 author: Hyeyeon
 description: 오늘의 관심사
 ---

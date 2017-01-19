@@ -9,7 +9,6 @@ tag:
 - jekyll
 - 링크 색 변경
 blog: true
-star: true
 author: Hyeyeon
 description: 깃허브 내맘대로 꾸미기
 ---

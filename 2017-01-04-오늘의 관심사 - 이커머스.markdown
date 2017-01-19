@@ -8,7 +8,6 @@ tag:
 - 오늘의 관심사
 - 이커머스
 blog: true
-star: true
 author: Hyeyeon
 description: 오늘의 관심사
 ---

@@ -10,7 +10,6 @@ tag:
 - 소비자 트렌드
 - 논문 읽는 방법
 blog: true
-star: true
 author: Hyeyeon
 description: 오늘의 관심사
 ---

@@ -10,7 +10,6 @@ tag:
 - urllib
 - 라이브러리
 blog: true
-star: true
 author: Hyeyeon
 description: 파이썬
 ---

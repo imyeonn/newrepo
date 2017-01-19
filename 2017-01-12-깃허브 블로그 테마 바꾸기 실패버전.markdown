@@ -9,7 +9,6 @@ tag:
 - jekyll
 - 블로그 테마 변경
 blog: true
-star: true
 author: Hyeyeon
 description: 깃허브 블로그 테마 변경
 ---
