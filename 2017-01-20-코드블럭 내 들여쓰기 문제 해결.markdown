@@ -1,0 +1,301 @@
+---
+title: "코드블럭 내 들여쓰기 문제 해결"
+layout: post
+date: 2017-01-19 10:02
+image: /assets/images/post/001/19_00title.png
+headerImage: true
+tag:
+- 코드블럭
+- sass
+- 들여쓰기
+blog: true
+author: Hyeyeon
+description: 코드블럭 내 들여쓰기 문제 해결
+---
+
+### Summary:
+
+코드블럭이 자동 들여쓰기가 되는 문제의 원인을 파악하고 해결했습니다.
+
+---
+
+
+
+## 문제 파악
+
+기본으로 세팅되어 있던 코드 블럭이 맘에 들지 않아서 속성을 바꾼 적이 있다.
+
+![pic1](/assets/images/post/001/19_01.png)
+<figcaption class="caption">비포</figcaption>
+
+<br>
+
+![pic2](/assets/images/post/001/19_02.png)
+<figcaption class="caption">애프터</figcaption>
+
+
+.scss 코드를 변경할 때 첫 줄 들여쓰기가 되도록 설정한 적이 없는데 코드블록 안 첫번째 줄이 들여쓰기가 되는 현상이 생겼다. 변경한 코드는 아래와 같다.
+
+
+* 초기 세팅
+
+{% highlight scss %}
+code,
+tt
+	padding: 1px 0
+	font-family: $fontMonospace
+	font-size: 12px
+	line-height: 20px
+	background: #fff
+	border-radius: 2px
+	border-radius: 2px
+
+pre
+	box-sizing: border-box
+	margin: 0 0 1.75em 0
+	width: 100%
+	padding: 5px 10px
+	font-family: $fontMonospace
+	font-size: 1.2rem
+	line-height: 2rem
+	overflow: auto
+	background: #fff
+	border: 1px solid $epsilon
+	border-radius: 2px
+{% endhighlight %}
+
+* 내가 건든 뒤
+
+{% highlight scss %}
+code,
+tt
+	padding: 3px 5px               // 테두리와의 간격 늘림
+	font-family: $fontMonospace
+	font-size: 13px                // 글자 크기 증가
+	line-height: 20px
+	background: $codebackground    // 배경색 변경
+	margin: 0 5px 0 5px            // 글자 주변 거리 늘림
+	border-radius: 5px             // 테두리 굴곡 동그랗게
+	font-weight: 400               // 글자 굵게
+
+pre
+	box-sizing: border-box
+	margin: 0 0 1.75em 0
+	width: 100%
+	padding: 5px 10px
+	font-family: $fontMonospace
+	font-size: 1.2rem
+	line-height: 2rem
+	overflow: auto
+	code                           // tt가 pre에 영향주지 않게 함
+		background: none
+	background: #fff
+	border: 1px solid $epsilon
+	border-radius: 2px
+{% endhighlight %}
+
+---
+
+## 하나씩 바꿔보기
+
+뭘 잘못했는지 바로 눈에 들어오지 않아서 변경사항을 다 초기세팅으로 되돌린 뒤 한 줄씩 바꾸면서 커밋했다. 이렇게 하면 시간은 걸릴지라도 어떤 코드가 들여쓰기에 영향을 주는 지 알 수 있다.
+
+범인은 이 녀석이다.
+
+{% highlight scss %}
+code,
+tt
+	margin: 0 5px 0 5px            // 글자 주변 거리 늘림
+{% endhighlight %}
+
+---
+
+## margin이 왜 문제일까
+
+#### * [case 1] margin: 0 0 0 0
+
+{% highlight scss %}
+code,
+tt
+	margin: 0 0 0 0
+{% endhighlight %}
+
+![pic3](/assets/images/post/001/19_03.png)
+<figcaption class="caption">너무 빡빡하다. 좌우를 늘려야겠다.</figcaption>
+
+
+#### * [case 2] margin: 0 5px 0 5px
+
+{% highlight scss %}
+code,
+tt
+	margin: 0 5px 0 5px
+{% endhighlight %}
+
+![pic4](/assets/images/post/001/19_04.png)
+<figcaption class="caption">좌우에 여유가 생긴다</figcaption>
+
+
+#### * [case 3] margin: 0 20px 0 0
+
+{% highlight scss %}
+code,
+tt
+	margin: 0 20px 0 0
+{% endhighlight %}
+
+![pic5](/assets/images/post/001/19_05.png)
+<figcaption class="caption">오른쪽 여백이 늘어난다</figcaption>
+
+#### * [case 4] margin: 0 0 0 20px
+
+{% highlight scss %}
+code,
+tt
+	margin: 0 0 0 20px
+{% endhighlight %}
+
+![pic6](/assets/images/post/001/19_06.png)
+<figcaption class="caption">왼쪽 여백이 늘어난다</figcaption>
+
+**[case2]** 가 가장 안정적으롭 보였다. 그러나 이 때 왼쪽 여백이 증가함에 따라 코드블럭의 첫째 줄에도 왼쪽 여백이 증가하는 결과가 생겼다. (근데 왜 첫째 줄만 마진이 늘어나는거지? 마진은 왼쪽 전체에 대해 늘어나야되는거 아닌가? 우선 이 질문은 보류.)
+
+---
+
+## 문제를 해결하자.
+
+해결법은 2가지로 나뉜다.
+
+1. tt(낱말코드 속성)의 마진 없애기
+2. tt에서 마진을 유지하되 pre(여러 줄 코드)일 때는 tt의 마진이 반영되지 않도록 설정하기
+
+1번 방법을 쓰면 여러 줄 코드에서 첫 줄 들여쓰기가 없어지는 대신 낱말코드 양옆이 너무 빡빡해져서 싫다. 2번을 시도하자.
+
+#### 2번 방법 시도
+
+{% highlight scss %}
+code,
+tt
+	margin: 0 5px 0 5px
+
+pre
+	margin: 0 0 1.75em 0
+	code                           
+		margin: none
+{% endhighlight %}
+
+![pic7](/assets/images/post/001/19_07.png)
+
+pre 안에 대해서는 code의 margin 설정을 사용하지 않도록 두고 블로그를 새로고침했다. 변한 게 없다.
+
+#### 2번 방법 재시도
+
+pre 안에 margin이 이미 있기 때문에 얘가 못 알아듣는 건가 싶어 pre의 margin 을 margin-bottom으로 바꿔봤다.
+
+{% highlight scss %}
+code,
+tt
+	margin: 0 5px 0 5px
+
+pre
+	margin-bottom: 1.75em
+	code                           
+		margin: none
+{% endhighlight %}
+
+![pic7](/assets/images/post/001/19_07.png)
+
+역시나 변한 게 없다.
+
+#### 2번 방법 재재시도
+
+`margin: none`을 `margin: 0 0 0 0`으로 바꾸면 될까?
+
+{% highlight scss %}
+code,
+tt
+	margin: 0 5px 0 5px
+
+pre
+	margin-bottom: 1.75em
+	code                           
+		margin: 0 0 0 0
+{% endhighlight %}
+
+![pic7](/assets/images/post/001/19_07.png)
+
+는 fail.
+
+#### 2번 방법 재재재시도
+
+`margin: 0 0 0 0`이 안먹히니까 아예 왼쪽으로 더 보내버릴 생각으로 `0 0 0 -10px`를 해봤다.
+
+{% highlight scss %}
+code,
+tt
+	margin: 0 5px 0 5px
+
+pre
+	margin-bottom: 1.75em
+	code                           
+		margin: 0 0 0 -10px
+{% endhighlight %}
+
+![pic8](/assets/images/post/001/19_08.png)
+
+오!!!!! import가 왼쪽으로 움직였다. 이제 알겠다. tt가   `+5px`일 때 pre가 `0px`이면 pre 안 code는 `5+0=5px`만큼 튀어나온다. 따라서 pre가 `-10px`이면 pre 안 code는 `5-10=-5px`만큼 튀어나온다. 결국 pre 안 code를 `margin: 0 0 0 -5px`로 두면 되는 문제였다.
+
+#### 2번 방법 재재재재시도
+
+`margin: 0 0 0 -5px`으로 바꿨다.
+
+{% highlight scss %}
+code,
+tt
+	margin: 0 5px 0 5px
+
+pre
+	margin-bottom: 1.75em
+	code                           
+		margin: 0 0 0 -5px
+{% endhighlight %}
+
+![pic9](/assets/images/post/001/19_09.png)
+
+해결!
+
+---
+
+## 최종 코드
+
+{% highlight scss %}
+code,
+tt
+	padding: 3px 5px
+	font-family: $fontMonospace
+	font-size: 13px
+	line-height: 20px
+	background: $codebackground
+	margin: 0 5px 0 5px
+	border-radius: 5px
+	font-weight: 400
+
+pre
+	box-sizing: border-box
+	margin: 0 0 1.75em 0
+	width: 100%
+	padding: 5px 10px
+	font-family: $fontMonospace
+	font-size: 1.2rem
+	line-height: 2rem
+	overflow: auto
+	code
+		background: none
+		margin: 0 0 0 -5px
+	background: #fff
+	border: 1px solid $epsilon
+	border-radius: 2px
+{% endhighlight %}
+
+![pic10](/assets/images/post/001/19_10.png)
+<figcaption class="caption">결과 화면</figcaption>

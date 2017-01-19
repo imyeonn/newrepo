@@ -16,7 +16,7 @@ description: 컬트뷰티 이용 후기
 
 ### Summary:
 
-[컬트뷰티][https://cultbeauty.co.kr/]에서 제품을 구매해봤습니다.
+[컬트뷰티](https://cultbeauty.co.kr/) <sup>(https://cultbeauty.co.kr/)</sup> 에서 제품을 구매해봤습니다.
 
 ---
 
