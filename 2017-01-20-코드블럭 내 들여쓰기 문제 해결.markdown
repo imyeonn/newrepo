@@ -174,7 +174,9 @@ tt
 
 1번 방법을 쓰면 여러 줄 코드에서 첫 줄 들여쓰기가 없어지는 대신 낱말코드 양옆이 너무 빡빡해져서 싫다. 2번을 시도하자.
 
-#### 2번 방법 시도
+### 2번 방법 시도
+
+pre 안에 대해서는 code의 margin 설정을 사용하지 않도록 두고 블로그를 새로고침했다.
 
 {% highlight scss %}
 code,
@@ -190,9 +192,9 @@ pre
 ![pic7](/assets/images/post/001/19_07.png)
 <figcaption class="caption">결과 화면</figcaption>
 
-pre 안에 대해서는 code의 margin 설정을 사용하지 않도록 두고 블로그를 새로고침했다. 변한 게 없다.
+변한 게 없다.
 
-#### 2번 방법 재시도
+### 2번 방법 재시도
 
 pre 안에 margin이 이미 있기 때문에 얘가 못 알아듣는 건가 싶어 pre의 margin 을 margin-bottom으로 바꿔봤다.
 
@@ -212,7 +214,7 @@ pre
 
 역시나 변한 게 없다.
 
-#### 2번 방법 재재시도
+### 2번 방법 재재시도
 
 `margin: none`을 `margin: 0 0 0 0`으로 바꾸면 될까?
 
@@ -232,7 +234,7 @@ pre
 
 는 fail.
 
-#### 2번 방법 재재재시도
+### 2번 방법 재재재시도
 
 `margin: 0 0 0 0`이 안먹히니까 아예 왼쪽으로 더 보내버릴 생각으로 `0 0 0 -10px`를 해봤다.
 
@@ -250,9 +252,11 @@ pre
 ![pic8](/assets/images/post/001/19_08.png)
 <figcaption class="caption">결과 화면</figcaption>
 
-오!!!!! import가 왼쪽으로 움직였다. 이제 알겠다. tt가   `+5px`일 때 pre가 `0px`이면 pre 안 code는 `5+0=5px`만큼 튀어나온다. 따라서 pre가 `-10px`이면 pre 안 code는 `5-10=-5px`만큼 튀어나온다. 결국 pre 안 code를 `margin: 0 0 0 -5px`로 두면 되는 문제였다.
+<br>
 
-#### 2번 방법 재재재재시도
+오!!!!! import가 왼쪽으로 움직였다. 이제 알겠다. tt가   **+5px** 일 때 pre가 **0px** 이면 pre 안 code는 **5+0=5px** 만큼 튀어나온다. 따라서 pre가 **-10px** 이면 pre 안 code는 **5-10=-5px** 만큼 튀어나온다. 결국 pre 안 code를 `margin: 0 0 0 -5px`로 두면 되는 문제였다.
+
+### 2번 방법 재재재재시도
 
 `margin: 0 0 0 -5px`으로 바꿨다.
 
@@ -306,5 +310,8 @@ pre
 
 ![pic10](/assets/images/post/001/19_10.png)
 <figcaption class="caption">결과 화면</figcaption>
+
+<br>
+<br>
 
 ---
