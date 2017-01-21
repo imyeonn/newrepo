@@ -59,6 +59,7 @@ description: css 기초 정리
 
 위 코드의 경우 하나의 메인 페이지(index.html)와 각 항목에 대한 3개 세부페이지(page1.html, page2.html, page3.html), 총 4개의 html 파일로 구성되어 있다. 이 html의 스타일을 변경하는 가장 기초적인 방법은 각 페이지의 `<head>`에 `<style>` 코드를 추가하는 것이다.
 
+---
 
 ### <header> 수정
 
@@ -144,187 +145,79 @@ nav ol{
 
 ---
 
-## 
+## 수정방법 2: css를 html로부터 분리하기
 
+첫번째로 시도했던 방법은 처음에 생각해내기는 쉽지만 하나의 수정사항이 생겼을 때 관련된 모든 html 파일을 모두 동시에 수정해야 한다는 단점이 있다. 코드 한 줄을 수정하려고 html을 4번이나 열어서 복붙을 해야 하는 것이다. 비효율적이다.
 
+이제부턴 html 내에 디자인에 관한 영역을 하나의 파일로 따로 빼올 것이다.
 
-
-
-
-
-
-
-
-h1, h2, h3, h4에 각각의 속성을 넣어봤다.
-
-* `;` : 속성과 속성을 구분할 때 사용
-* `h3, h4` : 에 같은 속성을 동시에 적용하고 싶을 때 ,로 묶음
-* `h4 {}` : h4에만 다른 속성을 추가하거나 제거할 때 따로 { } 추가
+1. html 내부 `<style>` ~ `</style>` 사이에 있던 css 코드를 복사한다.
+2. **style.css** 라는 새로운 파일을 생성 후 그 안에 1번의 코드를 붙여넣는다.
+3. 기존 html의 `<style>`과 `</style>` 태그는 삭제한다.
+4. 기존 html의 `<style>`이 있던 자리에 `<link rel="stylesheet" type="text/css" href="옮긴 .css파일 주소">`를 추가한다.
+5. index.html을 리로드해서 .css가 제대로 적용되는지 확인한다.
+6. 이제 나머지 html들도 똑같이 `<style>`을 지워버리고 `<link ~>`를 추가해준다.
 
 {% highlight html %}
-<style>
-  h1 {color: #427fed}
-  h2 {
-    text-decoration: underline;
-    font-size: 10px
-  }
-  h3, h4 {
-    color: #fff;
-    background-color: #db4437
-  }
-  h4 {
-    text-decoration: underline
-  }
-</style>
-{% endhighlight %}
-
-![pic1](/assets/images/post/001/17_01.png)
-<figcaption class="caption">적용 결과</figcaption>
-
-<br>
-
----
-
-## 태그가 여러겹일 때
-
-`<body>`를 보면 `h1`이 하나는 <header> 안에, 하나는 <header> 밖에 있다. 이 둘을 구분시키는 속성을 적용시켜보자.
-
-* `header h1 { }` : 뒤따르는 태그를 띄어쓰기로 구분하고 나열한다.
-
-{% highlight html %}
+<!-- css_basics_2_page1.html -->
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="utf-8">
-    <style>
-      h1 {color: #333}
-      header h1 {
-        border: 1px solid #db4437;
-        color: #db4437
-      }
-    </style>
+    <link rel="stylesheet" type="text/css" href="css_basics_2_style.css">
     <title></title>
   </head>
   <body>
     <header>
-      <h1>헤더 안 h1입니다.</h1>
+      <h1>타이틀(헤더)</h1>
     </header>
-    <h1>헤더 밖 h1입니다.</h1>
+    <nav>
+      <ol>
+        <li><a href="/css_basics_2_page1.html">목차 1</a></li>
+        <li><a href="/css_basics_2_page2.html">목차 2</a></li>
+        <li><a href="/css_basics_2_page3.html">목차 3</a></li>
+      </ol>
+    </nav>
+    <article>
+      <h2>목차 1</h2>
+      목차 1에 대한 설명입니다.
+    </article>
   </body>
 </html>
 {% endhighlight %}
 
-![pic2](/assets/images/post/001/17_02.png)
-<figcaption class="caption">적용 결과</figcaption>
-
 <br>
+
+{% highlight css %}
+/*css_basics_2_style.css*/
+/*<style> 안 코드만 빼옴.*/
+header {
+  border-bottom: 1px solid gray;
+  padding: 20px;
+}
+nav {
+  width: 150px;
+  float: left;
+  border-right: 1px solid gray;
+  height: 600px;
+}
+nav ol{
+  list-style: none;
+}
+article {
+  float: left;
+  padding-left: 20px;
+}
+{% endhighlight %}
+
+![pic6](/assets/images/post/001/22_06.png)
 
 ---
 
-## css 박스모델
+### 왜 이 방법이 좋을까?
 
-### 1. 각 리스트에 빨간색 점선 박스를 씌우고 싶다.
+변경사항이 생겼을 때 각 html마다 들어가서 스타일을 바꿀 필요가 없다. **.css** 에 접속한 뒤 스타일 속성을 단 한번만 변경하면 모든 html에 변경사항이 적용된다. 훨씬 편하다. 아 그래서 내 블로그도 **.sass** 폴더가 따로 있던 거구나.
 
-{% highlight html %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <style>
-      li {
-        border: 1px dotted #db4437;
-        margin-bottom: 20px
-      }
-    </style>
-    <title></title>
-  </head>
-  <body>
-    <ul>
-      <li>list1</li>
-      <li>list2</li>
-      <li>list3</li>
-    </ul>
-
-  </body>
-</html>
-{% endhighlight %}
-
-![pic3](/assets/images/post/001/17_03.png)
-
-### 2. list2에만 검정색 실선 박스을 채우고 싶다.
-
-list2의 `<li>`에 `id="selected"`를 추가하고, 위 <style>에서는 `#selected { }`를 추가하고 그 안에 원하는 속성값을 넣는다.
-
-* `#`과 `id`는 특수기호다. 맘대로 바꿔쓰면 안 된다. `#`은 id를 뜻한다.
-* 물론 `id="selected"`에서 "selected"는 내 맘대로 바꿔도 된다.
-* <style>에서 `selected { }` 을 하는게 아니다. 이렇게 되면 컴퓨터는 selected라는 태그를 찾는다. 내가 원하는 건 id가 "selected"인 <li> 태그에 검정색 실선 박스를 채우는 것이다.
-* 추가적으로 검정색 실선 박스 외 margin을 줬다. 다른 리스트들을 margin이 좌, 우, 위 모두 0이고 아래만 20px이지만 list2의 margin은 좌, 우, 위, 아래 모두 40px이다.
-
-{% highlight html %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <style>
-      li {
-        border: 1px dotted #db4437;
-        margin-bottom: 20px
-      }
-      #selected {
-        border: 1px solid #000;
-        margin: 40px
-      }
-    </style>
-    <title></title>
-  </head>
-  <body>
-    <ul>
-      <li>list1</li>
-      <li id="selected">list2</li>
-      <li>list3</li>
-    </ul>
-
-  </body>
-</html>
-{% endhighlight %}
-
-![pic4](/assets/images/post/001/17_04.png)
-
-<br>
-
-### 3. 글자와 블럭 사이 간격이 좁은 것 같다. 늘리자.
-
-padding 속성을 이용한다.
-
-{% highlight html %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <style>
-      li {
-        border: 2px dotted #db4437;
-        margin-bottom: 20px;
-        padding: 30px
-      }
-    </style>
-    <title></title>
-  </head>
-  <body>
-    <ul>
-      <li>list1</li>
-      <li>list2</li>
-      <li>list3</li>
-    </ul>
-
-  </body>
-</html>
-{% endhighlight %}
-
-![pic5](/assets/images/post/001/17_05.png)
-
-<br>
-
-이어지는 내용은 [css 기초정리 (2)](https://imyeonn.github.io/)에서 정리한다.
+또한 중복되는 코드를 한 번으로 퉁치는 것이기 때문에 데이터 저장 용량 부담도 덜하게 된다는 장점도 있다.
 
 ---
