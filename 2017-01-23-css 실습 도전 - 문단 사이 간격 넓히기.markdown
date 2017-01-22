@@ -15,7 +15,7 @@ description: css 실습
 
 ### Summary:
 
-[css 1](https://imyeonn.github.io/2017/01/19/css-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-(1)-css-%EA%B8%B0%EB%B3%B8-%EC%84%B8%ED%8C%85,-%EB%B0%95%EC%8A%A4%EB%AA%A8%EB%8D%B8,-margin,-padding.html), [css 2](https://imyeonn.github.io/2017/01/22/css-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-(2)-css-%EC%86%8D%EC%84%B1-%EC%88%98%EC%A0%95%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-2%EA%B0%80%EC%A7%80.html)에서 배운 내용을 토대로 블로그 포스트의 문단 사이 간격을 넓혔습니다.
+[css 1](https://imyeonn.github.io/2017/01/19/css-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-(1)-css-%EA%B8%B0%EB%B3%B8-%EC%84%B8%ED%8C%85,-%EB%B0%95%EC%8A%A4%EB%AA%A8%EB%8D%B8,-margin,-padding.html), [css 2](https://imyeonn.github.io/2017/01/22/css-%EA%B8%B0%EC%B4%88-%EC%A0%95%EB%A6%AC-(2)-css-%EC%86%8D%EC%84%B1-%EC%88%98%EC%A0%95%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-2%EA%B0%80%EC%A7%80.html)에서 배운 내용을 토대로 블로그 포스트의 문단 사이 간격을 넓히는 실습을 진행했습니다.
 
 ---
 
@@ -23,7 +23,7 @@ description: css 실습
 
 생활코딩의 css 기초 과정을 수강하면서 margin, border, padding의 개념을 익혔다. 이를 바탕으로 내 블로그의 빡빡한 문단 간격을 넓혀보자.
 
-[어제 올린 포스팅]()이다. 4개 문단이 있는데 사이 간격이 너무 빡빡하게 보인다. 가독성도 떨어지는 것 같고. 줄간격은 괜찮은데 문단 사이를 좀 더 멀리 떨어뜨리고 싶었다.
+[어제 올린 포스팅](https://imyeonn.github.io/2017/01/22/%EC%9C%84%EB%A9%94%ED%94%84-%EC%9D%B4%EC%9A%A9-%ED%9B%84%EA%B8%B0.html)이다. 4개 문단이 있는데 사이 간격이 너무 빡빡하게 보인다. 가독성도 떨어지는 것 같고. 줄간격은 괜찮은데 문단 사이를 좀 더 멀리 떨어뜨리고 싶었다.
 
 ![pic1](/assets/images/post/001/24_01.png)
 
@@ -41,7 +41,7 @@ description: css 실습
 
 ![pic2](/assets/images/post/001/24_02.png)
 
-문단은 `<p>` 태그로 덩어리가 만들어져 있었다. 그 덩어리 위 아래 마진(margin)이 있는데 `margin-bottom: 20px;`인 것으로 보다 각 문단마다 문단 아래 20px의 여유를 두나 보다. 이 속성이 어느 파일에 저장되어있는지 알기 위해 블로그 생성 폴더를 뒤져봤다.(깃허브 지킬 테마를 이용 중이다.) **'깃허브 아이디.github.io/_sass/base/general.sass'** 에 스타일 속성이 들어있었다.
+문단은 `<p>` 태그로 덩어리가 만들어져 있었다. 그 덩어리 위 아래 마진(margin)이 있는데 `margin-bottom: 20px;`인 것으로 보아 각 문단마다 문단 아래 20px의 여유를 두나 보다. 이 속성이 어느 파일에 저장되어있는지 알기 위해 블로그 생성 폴더를 뒤져봤다.(깃허브 지킬 테마를 이용 중이다.) **'깃허브 아이디.github.io/_sass/base/general.sass'** 에 스타일 속성이 들어있었다.
 
 {% highlight scss %}
 p
@@ -81,7 +81,7 @@ p
 	color: $alpha
 	font-weight: 300
 	margin-bottom: 20px
-  padding: 5px
+	padding: 5px
 	letter-spacing: 0.3px
 
 	@media #{$mobile}
